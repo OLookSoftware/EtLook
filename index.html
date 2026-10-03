@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EtLook - Extended VLookup Excel Add-in</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a365d;
+            margin-bottom: 1rem;
+        }
+
+        .tagline {
+            font-size: 1.25rem;
+            color: #4a5568;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .description {
+            font-size: 1.15rem;
+            margin-bottom: 2rem;
+            color: #2d3748;
+            line-height: 1.8;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 1rem;
+            background: #f7fafc;
+            border-radius: 8px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-check {
+            color: #3182ce;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 0.1rem;
+            flex-shrink: 0;
+        }
+
+        .feature-text {
+            font-size: 1rem;
+            color: #2d3748;
+        }
+
+        .download-section {
+            text-align: center;
+            margin: 2.5rem 0;
+        }
+
+        .download-btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%);
+            color: white;
+            padding: 1rem 2.5rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 15px rgba(49, 130, 206, 0.3);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(49, 130, 206, 0.4);
+        }
+
+        .contact-section {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .contact-label {
+            font-size: 1rem;
+            color: #718096;
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-email {
+            font-size: 1.1rem;
+            color: #3182ce;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-email:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #718096;
+            font-size: 0.9rem;
+        }
+
+        .screenshots-section {
+            margin: 2.5rem 0;
+        }
+
+        .screenshots-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1a365d;
+            text-align: center;
+            margin-bottom: 1.75rem;
+        }
+
+        .screenshots-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .screenshot-item {
+            margin: 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            background: #f7fafc;
+        }
+
+        .screenshot-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+        }
+
+        .screenshot-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .screenshot-item figcaption {
+            padding: 0.85rem 1rem;
+            text-align: center;
+            font-size: 0.95rem;
+            color: #4a5568;
+            background: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .card {
+                padding: 1.5rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .screenshots-grid {
+                grid-template-columns: 1fr;
+                gap: 1.25rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Extended VLookup Excel Add-in</h1>
+            <!--<p class="tagline">Replace complex lookup formulas with a simple point-and-click workflow</p>-->
+	<p class="tagline">An Excel data search tool - No formula, powerful and easy to use</p>
+        </header>
+
+        <div class="card">
+            <p class="description">
+                This all-in-one Excel add-in replaces VLOOKUP, XLOOKUP, and INDEX+MATCH formulas with the following special powerful functions :
+            </p>
+
+            <div class="features-grid">
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Multi-condition matching for complex lookups</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Fuzzy matching for results containing the keywords</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">One-to-many results – return all matches or just the first one</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Return multiple columns or a continuous column range at once</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Search multiple workbooks or an entire folder at once</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">See exactly where each match comes from: file name, sheet name, and row number</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Click to select columns – no need to type column numbers or ranges</span>
+                </div>
+                <div class="feature-item">
+                    <span class="feature-check">✓</span>
+                    <span class="feature-text">Automatically handles merged cells by splitting them during lookup</span>
+                </div>
+            </div>
+
+            <div class="screenshots-section">
+                <h2 class="screenshots-title">Interface Preview</h2>
+                <div class="screenshots-grid">
+                    <figure class="screenshot-item">
+                        <img src="screenshots/conditions.png" alt="Conditions Tab - Multi-condition lookup setup">
+                        <figcaption>Conditions Tab – Configure flexible multi-condition matching rules</figcaption>
+                    </figure>
+                    <figure class="screenshot-item">
+                        <img src="screenshots/returns.png" alt="Returns Tab - Result return options">
+                        <figcaption>Returns Tab – Customize the return results you need</figcaption>
+                    </figure>
+                    <figure class="screenshot-item">
+                        <img src="screenshots/files.png" alt="Files Tab - Batch multi-file processing">
+                        <figcaption>Files Tab – Search multiple workbooks and folders in batch</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="download-section">
+                <a href="https://OLookSoftware.github.io/EtLook/EtLook_1.1.34_64-bit_Setup.msi" class="download-btn" download>
+                    Download EtLook v1.1.34 (64-bit)
+                </a>
+            </div>
+
+            <div class="contact-section">
+                <p class="contact-label">For support, feedback or inquiries:</p>
+                <a href="mailto:OLookSoftware@outlook.com" class="contact-email">OLookSoftware@outlook.com</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2026 EtLook. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html><!--03333560192395614730100313--><!--03683499212395614730100313--><!--05870798922573747210100313-->
